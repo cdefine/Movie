@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+  <package name="default" namespace="/" extends="struts-default">
+     <action name="checklogin" class="controller.CheckLogin" method="checkInDb">
+       <result name="user">/index.jsp</result>
+       <result name="admin"  type="redirectAction">loadClass</result>
+       <result name="fail">/login_fail.jsp</result>
+       <result name="input">/login.jsp</result>
+     </action>
+     <action name="userregist" class="controller.UserRegist" method="regist">
+     	<result name="suc">/regist_suc.jsp</result>
+     	<result name="fail">/regist_fail.jsp</result>
+     	<result name="input">/regist.jsp</result>
+     </action>
+     <action name="addMovie" class="controller.ManageMovie" method="addMovie">
+     	<result name="suc">/login_suc.jsp</result>
+     	<result name="fail">/login_fail.jsp</result>
+     	<result name="input">/manage.jsp</result>
+     </action>
+	  <action name="loadClass" class="controller.ManageMovie" method="loadClass">
+	    <result name="suc">/manage.jsp</result>	
+     </action>
+    <action name="loadImg" class="controller.loadImg" method="loadimg">
+     </action>
+     <action name="Disdetail" class="controller.DisDetail" method="disDetail">
+     <result name="suc" >/detail.jsp</result>	
+     </action>
+      <action name="addComment" class="controller.addComment" method="addComt">
+     </action>
+  	<action name="loadComment" class="controller.loadComment" method="loadComt">
+     </action>     
+      <action name="searchByType" class="controller.searchByType" method="searchType">
+     </action>  
+     <action name="searchBykey" class="controller.searchBykey" method="searchkey">
+     </action>  
+   </package>
+</struts>
